@@ -2,9 +2,157 @@
     <head>
         <link rel="stylesheet" href="style.css">
     </head>
-    <div id='container'>
-        <div class='header'>
-            Python Stars Exercise2
-        </div>
+    <div class='container'>
+        <div class='headercontainer'>
+            <div class='header'>Python Excercises</div>         
+            <div class='containerbody'>
+                <div class='box'>
+                    <div class='boxquestion'>
+                        <div class='boxheader'>
+Write a program that takes number of lines as input and prints the stars in below pattern
+</div>
+<div class='boxquestionstars'>
+▶ ./Stars1.py 
+Enter no of lines : 10
+*                                   * 
+* *                               * * 
+* * *                           * * * 
+* * * *                       * * * * 
+* * * * *                   * * * * * 
+* * * * * *               * * * * * * 
+* * * * * * *           * * * * * * * 
+* * * * * * * *       * * * * * * * * 
+* * * * * * * * *   * * * * * * * * * 
+* * * * * * * * * * * * * * * * * * * 
+
+</div>
+<div class='boxquestionanswer'>
+    #!/usr/bin/python3
+    lines = int(input("Enter no of lines : "))
+    
+    for i in range(0,lines):
+        for line1 in range(0,i+1):
+            print("*",end=' ')
+        for space in range(0,2*(lines-i-1)-1):
+            print(" ",end=' ')
+        if i==lines-1:
+            for line in range(0,i):
+                print("*",end=' ')
+        else:
+            for line in range(0,i+1):
+                print("*",end=' ')
+    
+        print()
+
+</div>
+                    </div>
+                    <div class='box'>
+                        <div class='boxquestion'>
+                            <div class='boxheader'>
+    Write a program that takes number of lines as input and prints the stars in below pattern
     </div>
+    <div class='boxquestionstars'>
+▶ ./Stars2.py
+Enter no of lines : 10
+* * * * * * * * * * 
+  * * * * * * * * * 
+    * * * * * * * * 
+      * * * * * * * 
+        * * * * * * 
+          * * * * * 
+            * * * * 
+              * * * 
+                * * 
+                  * 
+                    
+                  * 
+                * * 
+              * * * 
+            * * * * 
+          * * * * * 
+        * * * * * * 
+      * * * * * * * 
+    * * * * * * * * 
+  * * * * * * * * * 
+* * * * * * * * * *
+    </div>
+    <div class='boxquestionanswer'>
+#!/usr/bin/python3
+lines = int(input("Enter no of lines : "))
+
+for i in range(0,lines):
+    for space in range(0,i):
+        print(" ",end=' ')
+    for stars in range(0,lines-i):
+        print("*",end=' ')
+    print()
+for i in range(0,lines+1):
+    for space in range(0,lines-i):
+        print(" ",end=' ')
+    for stars in range(0,i):
+        print("*",end=' ')
+    print()%                                                                                                                
+
+    
+    </div>
+                        </div>
+                        <div class='box'>
+                            <div class='boxquestion'>
+                                <div class='boxheader'>
+        Write a program that takes a number and displays if the number is prime or not
+        </div>
+        <div class='boxquestionstars'>
+▶ ./primeornot.py 
+Enter a Number : 7
+Prime Number
+        </div>
+        <div class='boxquestionanswer'>
+#!/usr/bin/python3
+num = int(input("Enter a Number : "))
+divisiblecount = 0
+for i in range(1,num+1):
+    if num%i==0:
+        divisiblecount=divisiblecount+1
+
+if divisiblecount == 2:
+    print("Prime Number")
+else:
+    print("Not a prime Number")
+
+        </div>
+                            </div>
+                            <div class='box'>
+                                <div class='boxquestion'>
+                                    <div class='boxheader'>
+            Write a program that takes a number and displays all the prime number from 0 to that number
+            </div>
+            <div class='boxquestionstars'>
+▶ ./noofprimes.py 
+Enter a Number : 25
+2 3 5 7 11 13 17 19 23
+            </div>
+            <div class='boxquestionanswer'>
+#!/usr/bin/python3
+num = int(input("Enter a Number : "))
+primenumbers = []
+
+for each_num in range(1,num+1):
+    divisiblecount = 0
+    for i in range(2,each_num+1):
+        if each_num%i==0:
+            divisiblecount=divisiblecount+1
+
+    if divisiblecount == 1:
+        primenumbers.append(str(each_num))
+
+print(" ".join(primenumbers))
+            </div>
+                                </div>
+                </div>
+            </div> 
+        </div>
+
+    </div>  
+
+
 </html>
